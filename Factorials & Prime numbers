@@ -1,0 +1,42 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+// The purpose of this code is to check if a number is prime and to calculate its factorial.
+
+ int factorial(int n)
+{
+    if (n == 0)
+        return 1;
+    else
+        return n * factorial(n - 1);
+}
+
+ bool isPrime(int n)
+{
+    if (n <= 1)
+        return false;
+    for (int k = 2; k <= sqrt(n); k++) {
+        if (n % k == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main()
+{
+    cout << "Enter a number to check if it is prime and to find its factorial: ";
+    int n = 0;
+    cin >> n;
+
+    if (isPrime(n)) {
+        cout << n << " is a prime number." << endl;
+    }
+    else {
+        cout << n << " is not a prime number." << endl;
+    }
+
+    cout << "Factorial of " << n << " is " << factorial(n) << endl;
+    return 0;
+}
