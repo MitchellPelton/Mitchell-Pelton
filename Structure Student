@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+
+// The purpose of this code is to create a structure for students and then to create 3 students and display their name, id, and gpa.
+
+struct Student
+{
+	string name;
+	int id;
+	float gpa;
+	void display()
+	{
+		cout << " The student name is: " << name << endl;
+		cout << " The student id is: " << id << endl;
+		cout << " The student gpa is: " << gpa << endl;
+	}
+}Student1, Student2, Student3;
+
+int main()
+{cout<< " Please enter the name of student 1: ";
+	cin >> Student1.name;
+	cout << " Please enter the id of student 1: ";
+	cin >> Student1.id;
+	cout << " Please enter the gpa of student 1: ";
+	cin >> Student1.gpa;
+
+	
+	cout<< "Please enter the name of student 2: ";
+	cin >> Student2.name;
+	cout << " Please enter the id of student 2: ";
+	cin >> Student2.id;
+	cout << " Please enter the gpa of student 2: ";
+	cin >> Student2.gpa;
+	
+	cout << " Please enter the name of student 3: ";
+	cin >> Student3.name;
+	cout << " Please enter the id of student 3: ";
+	cin >> Student3.id;
+	cout << " Please enter the gpa of student 3: ";
+	cin >> Student3.gpa;
+	cout << " Student 1: " << endl;
+	Student1.display();
+	cout << " Student 2: " << endl;
+	Student2.display();
+	cout << " Student 3: " << endl;
+	Student3.display();
+}
