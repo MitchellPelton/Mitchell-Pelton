@@ -1,0 +1,48 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+
+// This program will read movie names from a file and write them to another file, then count the number of movies and display it to the user.
+
+int main()
+{
+	ifstream ifs;
+	ofstream ofs;
+	string movieName;
+
+	ofs.open("Movie.txt");
+	
+	if (!ofs.is_open()) {
+		cout << "File not found!" << endl;
+		return 1;
+
+	}
+	// The purpose of this loop is to get the user to input how many movies they want to enter, and then have the user enter the movie names.
+	int numMovies;
+	cout << "How many movies do you want to enter?" << endl;
+	cin >> numMovies;
+	for (int i = 0; i < numMovies; i++) {
+		cout << "Enter movie name: " << endl;
+		cin >> movieName;
+		ofs << movieName << endl;
+	}
+	ofs.close();
+	ifs.open("Movie.txt");
+	if (!ifs.is_open()) {
+		cout << "File not found!" << endl;
+		return 1;
+	}
+	// The purpose of this loop is to read the movie names from the file and count how many movies there are, then display the count to the user.
+	int count = 0;
+	while (getline(ifs, movieName)) {
+		count++;
+	}
+	cout << "You have entered " << count << " movies." << endl;
+	ifs.close();
+
+	return 0;
+
+
+}
