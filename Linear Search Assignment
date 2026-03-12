@@ -1,0 +1,23 @@
+
+#include <iostream>
+using namespace std;
+
+//the purpose of this program is to search a number in an array using linear search.
+
+int main()
+{
+	int arr[] = { 1, 2, 3, 4, 5 };
+	int size = sizeof(arr) / sizeof(arr[0]);
+	int num;
+	cout << "Enter a number to search: ";
+	cin >> num;
+
+	for (int i = 0; i < size; i++) {
+		if (arr[i] == num) {
+			cout << "Number found at index: " << i << endl;
+			return 0;
+		}
+	}
+	cout << "Number not found in the array." << endl;
+		
+}
